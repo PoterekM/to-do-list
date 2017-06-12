@@ -38,11 +38,11 @@ $(document).ready(function() {
 
     $("input:checkbox").click(function(event) {
       event.preventDefault();
-      $(".new-item").val("checked");
+      $(".new-item").each(function() {
         $(this).remove();
       //   var newList = $(this).val();
       // $('#avoidList').remove();
-
+        });
       });
     });
   });
