@@ -24,7 +24,7 @@ $(document).ready(function() {
     var newList = new List(inputtedTask, inputtedDetails);
     console.log(newList);
 
-    $("ul#avoidList").append("<li><span class='new-item'>" + newList.task + "</span></li><input type='checkbox'>");
+    $("ul#avoidList").append("<li><span class='new-item'>" + newList.task + "</span></li><input type='checkbox' name='complete' value='checked'>");
 
     $("input#new-task").val("");
     $("input#new-details").val("");
@@ -36,9 +36,17 @@ $(document).ready(function() {
       $(".details").text(newList.details);
     });
 
+    $("input:checkbox").click(function(event) {
+      event.preventDefault();
+      $(".new-item").val("checked");
+        $(this).remove();
+      //   var newList = $(this).val();
+      // $('#avoidList').remove();
 
+      });
+    });
   });
-});
+
 
 
 // Specifications
