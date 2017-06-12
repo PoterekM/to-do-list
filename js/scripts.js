@@ -7,7 +7,7 @@ function List(task, details) {
 
 
 
-console.log("boop")
+
 
 
 
@@ -24,14 +24,14 @@ $(document).ready(function() {
     var newList = new List(inputtedTask, inputtedDetails);
     console.log(newList);
 
-    $("ul#avoidList").append("<li><span class='new-item'>" + newList.task + "</span></li>");
+    $("ul#avoidList").append("<li><span class='new-item'>" + newList.task + "</span></li><input type='checkbox'>");
 
     $("input#new-task").val("");
     $("input#new-details").val("");
 
 
     $(".new-item").last().click(function() {
-      $("#show-items").show();
+      $("#show-items").toggle();
       $("#show-items h2").text(newList.task);
       $(".details").text(newList.details);
     });
